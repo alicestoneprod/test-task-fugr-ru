@@ -1,2 +1,11 @@
 @import "./styles/reset.css";
 @import "./styles/normalize.css";
+
+body {
+  font-family: "Courier New", Courier, monospace;
+}
+.filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

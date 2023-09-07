@@ -1,6 +1,6 @@
-
+import { Index } from "./pages"
 function App() {
-  return <div>startPage</div>
+  return <Index></Index>
 }
 
 export default App

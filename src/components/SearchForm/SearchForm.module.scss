@@ -1,0 +1,32 @@
+.searchFormContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 200px;
+}
+.title {
+  font-weight: 600;
+  &Wrapper {
+    color: black;
+  }
+}
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.searchBooksInput {
+  width: 25vw;
+  height: 25px;
+  padding-right: 40px;
+}
+.icon {
+  height: 32px;
+  width: 32px;
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
