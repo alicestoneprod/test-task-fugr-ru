@@ -157,13 +157,13 @@ export const appendFetchedBooksFailAction = (payload: object) => ({
 })
 ///Fetch 1 book
 export const fetchCurrentBookStartedAction = () => ({
-  type: "FETCH_BOOK_STARTED",
+  type: "FETCH_BOOKS_STARTED",
 })
 export const fetchCurrentBookSuccessAction = (payload: object) => ({
-  type: "FETCH_BOOK_SUCCESS",
+  type: "FETCH_BOOKS_SUCCESS",
   payload,
 })
 export const fetchCurrentBookFailAction = (payload: object) => ({
-  type: "FETCH_BOOK_FAIL",
+  type: "FETCH_BOOKS_FAIL",
   payload,
 })
