@@ -1,9 +1,15 @@
-import { useState } from "react"
-import s from "./SearchForm.module.scss"
-import search from "./search.svg"
-
-export const SearchForm: React.FC = () => {
-  const [searchText, setSearchText] = useState("")
+import s from "./searchForm.module.scss"
+import search from "./research.png"
+type SearchFormProps = {
+  searchText: string
+  onSetSearchText: (e: string) => void
+  onSearchHandler: () => void
+}
+export const SearchForm: React.FC<SearchFormProps> = ({
+  searchText,
+  onSetSearchText,
+  onSearchHandler,
+}) => {
   return (
     <div className={s.searchFormContainer}>
       <div className={s.titleWrapper}>
@@ -14,12 +20,23 @@ export const SearchForm: React.FC = () => {
           type='text'
           className={s.searchBooksInput}
           value={searchText}
+          onKeyDownCapture={(e) => {
+            if (e.keyCode === 13) {
+              e.preventDefault()
+              onSearchHandler()
+            }
+            return
+          }}
           onChange={(e) => {
-            setSearchText(e.target.value)
+            onSetSearchText(e.target.value)
           }}
           placeholder='Search for books'
         />
-        <img src={search} className={s.icon} />
+        <img
+          src={search}
+          onClick={() => onSearchHandler()}
+          className={s.icon}
+        />
       </form>
     </div>
   )

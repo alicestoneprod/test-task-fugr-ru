@@ -1,0 +1,51 @@
+$color-grey: #767575;
+$color-smoke: #f0f0f0;
+
+.bookTitleContainer {
+  text-align: center;
+}
+.title {
+  font-weight: bold;
+  color: white;
+}
+.spinnerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.loadingText {
+  font-weight: bold;
+  color: white;
+  font-weight: bold;
+}
+.bookContainer {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+.btn {
+  background-color: #42ac45;
+  border: 1px #218224 solid;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+.btn:hover {
+  background-color: #71e475;
+  color: black;
+  transition: background-color 0.3s linear 0s;
+}
+
+@media screen and (max-width: 720px) {
+  .bookContainer {
+    flex-direction: column;
+  }
+}

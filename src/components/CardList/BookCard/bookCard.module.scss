@@ -1,0 +1,50 @@
+$color-grey: #767575;
+$color-smoke: #f0f0f0;
+
+.bookCardContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px;
+  width: 260px;
+  height: 380px;
+  background-color: $color-smoke;
+  box-shadow: 19px -1px 41px -7px rgba(135, 139, 143, 0.13);
+}
+.bookImg {
+  &Container {
+    display: flex;
+    justify-content: center;
+  }
+  box-shadow: 4px -5px 83px -31px rgba(34, 60, 80, 0.39);
+  width: 150px;
+  height: 200px;
+  margin-bottom: 30px;
+}
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.categories {
+  display: flex;
+  font-size: 14px;
+  color: $color-grey;
+  text-decoration: underline;
+  margin-bottom: 20px;
+}
+.title {
+  display: flex;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.authors {
+  display: flex;
+  color: $color-grey;
+}
+
+@media screen and (max-width: 480px) {
+  .bookCardContainer {
+    justify-content: center;
+  }
+}

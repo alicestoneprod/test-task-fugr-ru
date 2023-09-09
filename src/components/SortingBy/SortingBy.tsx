@@ -1,18 +1,27 @@
-import { useState } from "react"
-import s from "./SortingBy.module.scss"
+import s from "./sortingBy.module.scss"
 import { sortParams } from "./sortParams"
-export const SortingBy: React.FC = () => {
-  const [sortParam, setSortParam] = useState("relevance")
 
+type SortingByProps = {
+  sortParam: string
+  onChangeSortParam: (e: string) => void
+}
+
+export const SortingBy: React.FC<SortingByProps> = ({
+  sortParam,
+  onChangeSortParam,
+}) => {
   return (
     <div className={s.SortingByContainer}>
       <form>
-        <label htmlFor='category'>Categoryes:</label>
+        <label className={s.sortingByLabel} htmlFor='sortby'>
+          Sorting by
+        </label>
         <select
-          id='category'
-          name='category'
+        className={s.selectSortBy}
+          id='sortby'
+          name='sortby'
           value={sortParam}
-          onChange={(e) => setSortParam(e.target.value)}>
+          onChange={(e) => onChangeSortParam(e.target.value)}>
           {sortParams.map((param) => (
             <option value={param} key={param}>
               {param}

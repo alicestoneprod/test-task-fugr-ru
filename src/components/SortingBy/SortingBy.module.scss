@@ -1,3 +1,13 @@
 .SortingByContainer {
   display: flex;
 }
+.sortingByLabel {
+  color: white;
+  font-weight: bold;
+  margin-right: 10px;
+}
+.selectSortBy {
+  border: none;
+  background-color: white;
+  font-weight: bold;
+}

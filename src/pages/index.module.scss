@@ -1,0 +1,20 @@
+.booksContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.totalBooks {
+  color: white;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+.booksPlaceholder {
+  padding: 0 80px;
+}
+.loadMoreText {
+  cursor: pointer;
+  margin-bottom: 40px;
+  color: white;
+  font-weight: bold;
+}

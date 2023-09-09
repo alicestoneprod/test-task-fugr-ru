@@ -1,0 +1,21 @@
+.controlElementsContainer {
+  margin-bottom: 20px;
+}
+.spinContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchControlsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 480px) {
+  .searchControlsContainer {
+    flex-direction: column;
+  }
+}

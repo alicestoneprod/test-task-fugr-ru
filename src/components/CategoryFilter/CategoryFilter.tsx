@@ -1,19 +1,27 @@
-import { useState } from "react"
-import s from "./CategoryFilter.module.scss"
+import s from "./categoryFilter.module.scss"
 import { categories } from "./categories"
+import React from "react"
+type CategoryFilterProps = {
+  selectedCategory: string
+  onChangeCategory: (e: string) => void
+}
 
-export const CategoryFilter: React.FC = () => {
-  const [selectedCategory, setSelectedCategory] = useState("all")
-
+export const CategoryFilter: React.FC<CategoryFilterProps> = ({
+  selectedCategory,
+  onChangeCategory,
+}: CategoryFilterProps) => {
   return (
     <div className={s.categoryFilterContainer}>
       <form>
-        <label htmlFor='category'>Categories:</label>
+        <label className={s.categoriesLabel} htmlFor='category'>
+          Categories
+        </label>
         <select
+          className={s.selectByCategory}
           id='category'
           name='category'
           value={selectedCategory}
-          onChange={(e) => setSelectedCategory(e.target.value)}>
+          onChange={(e) => onChangeCategory(e.target.value)}>
           {categories.map((category) => (
             <option value={category} key={category}>
               {category}

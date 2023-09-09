@@ -1,11 +1,13 @@
-@import "./styles/reset.css";
-@import "./styles/normalize.css";
+@import "./styles/reset.scss";
+@import "./styles/normalize.scss";
+@import "./styles/fonts.scss";
 
 body {
-  font-family: "Courier New", Courier, monospace;
+  font-family: $font-Montserrat;
 }
-.filters {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+html {
+  background: url(/background.jpg) center center fixed no-repeat;
+  background-size: cover;
+  overflow: scroll;
 }
