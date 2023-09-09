@@ -12,10 +12,10 @@ export const CardList: React.FC<BooksItemsI> = ({ items }) => {
   return (
     <div className={s.cardListContainer}>
       {items?.map((el, index) => {
-        const author = el?.volumeInfo?.authors[0] || ""
+        const author = el?.volumeInfo?.authors?.at(0) || ""
         const title = el?.volumeInfo?.title
         const imageLink = el?.volumeInfo?.imageLinks?.thumbnail
-        const category = el?.volumeInfo?.categories[0] || ""
+        const category = el?.volumeInfo?.categories?.at(0) || ""
         return (
           <div
             className={s.cardWrapper}
