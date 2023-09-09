@@ -1,27 +1,28 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Выполнено тестовое задание:
+Задача:
+Создать приложение для поиска книг с использованием Google Books API, запрос можно сделать при "Enter" или при нажатии на кнопку поиска, также присутсвуют фильтр по категориям и сортировка по актуальности и новизне.
+При запросе сначала добавляются 30 книг, затем, промотав вниз, можно нажать на кнопку Load more для загрузки еще большего (+30) количества книг по тому же запросу. (пагинация). Затем же, сделать переход на страницу книги, где отображаются все авторы, категории, картинка и описание с названием книги.
 
-Currently, two official plugins are available:
+# Использованы следующие библиотеки:
+- TypeScript (основной язык приложения)
+- React.js (функциональные компоненты), React-Router-Dom (для налаживания навигации)
+- Redux (глобальный state-manager), Redux Thunk, Redux DevTools Extension, Redux Toolkit
+- React-redux (для связи React.js и Redux)
+- Axios (REST-API)
+- SCSS (препроцессор)
+- Module components (example.module.scss)
+- yarn package manager (для запуска приложения в режиме разработки)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Сборщик:
+- Vite
 
-## Expanding the ESLint configuration
+# API:
+- Google Books API
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+# Прочее:
+- Присутствует адаптивная вертска под мобильные устройства, а также планшеты.
+- Использованы ESLint, Prettier.
+- Firefox Developer Edition (браузер для разработчиков)
+- Использован Photoshop (для background).
