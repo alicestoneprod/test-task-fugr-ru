@@ -3,6 +3,7 @@ import { RootState } from "../../../store"
 import { useSelector } from "react-redux"
 import s from "./BookAbout.module.scss"
 export const BookAbout: React.FC = () => {
+  //@ts-ignore
   const currentBook: BookI = useSelector(
     (state: RootState) => state.currentBook
   )

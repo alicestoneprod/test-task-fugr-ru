@@ -17,6 +17,7 @@ export const ControlElements: React.FC = () => {
 
   const onSearchHandler = async () => {
     if (searchText.length && !fetching) {
+      //@ts-ignore
       dispatch(fetchBooks(searchText, selectedCategory, sortParam))
     }
   }

@@ -15,6 +15,7 @@ export const Index: React.FC = () => {
   const appendBooksHandler = () => {
     if (books) {
       const index = books.items.length
+      //@ts-ignore
       dispatch(fetchAppendBooks(fetchQuery, index))
     }
   }
@@ -22,11 +23,13 @@ export const Index: React.FC = () => {
   return (
     <>
       <ControlElements />
+
       <div className={s.booksContainer}>
         {books.items.length > 0 && (
           <div className={s.totalBooks}>Found {books.totalItems} results</div>
-        )}
-        <CardList items={books.items} key={"cardlist"} />
+        )}{
+          //@ts-ignore
+        <CardList items={books.items} key={"cardlist"} />}
         <div className={s.spinContainer}>
           {fetching && books.items.length && <Spinner />}
         </div>

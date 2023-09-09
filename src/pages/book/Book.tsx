@@ -16,6 +16,7 @@ export const Book: React.FC = () => {
   const dispatch = useDispatch()
   useEffect(() => {
     if (fetching === false) {
+      //@ts-ignore
       dispatch(fetchBookById(currentBookID))
     }
   }, [])

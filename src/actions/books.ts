@@ -1,4 +1,4 @@
-import { Dispatch } from "redux"
+import { AnyAction, Dispatch } from "redux"
 import {
   addFetchedBooksSuccessAction,
   addFetchedBooksStartedAction,
@@ -11,12 +11,14 @@ import {
   fetchCurrentBookFailAction,
 } from "../store/booksReducer"
 import axios from "axios"
+import { ThunkAction } from "redux-thunk"
+import { RootState } from "../store"
 
 export const fetchBooks = (
   searchText: string,
   selectedCategory: string,
   sortParams: string
-) => {
+): ThunkAction<void, RootState, unknown, AnyAction> => {
   const queryForFetchBooks = `https://www.googleapis.com/books/v1/volumes?q=${searchText.replace(
     " ",
     "+"
@@ -59,7 +61,9 @@ export const fetchAppendBooks = (fetchQuery: string, startIndex: number) => {
   }
 }
 
-export const fetchBookById = (bookId: string) => {
+export const fetchBookById = (
+  bookId: string
+): ThunkAction<void, RootState, unknown, AnyAction> => {
   return (dispatch: Dispatch) => {
     const queryForFetchBookById = `https://www.googleapis.com/books/v1/volumes/${bookId}?key=${
       import.meta.env.VITE_key

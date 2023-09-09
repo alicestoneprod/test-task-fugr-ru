@@ -42,12 +42,12 @@ export interface AddBooksActionI {
   payload: object[]
 }
 
-type BooksActionTypes = AddBooksActionI
+export type BooksActionTypes = AddBooksActionI
 
 const defaultState: BooksStateI = {
   loading: false,
   books: {
-    items: [],
+    items: [] as BookI[],
     totalItems: 0,
   },
   error: "",
@@ -74,9 +74,9 @@ const APPEND_BOOKS_STARTED = "APPEND_BOOKS_STARTED"
 const APPEND_BOOKS_SUCCESS = "APPEND_BOOKS_SUCCESS"
 const APPEND_BOOKS_FAIL = "APPEND_BOOKS_FAIL"
 
-const FETCH_BOOKS_STARTED = "FETCH_BOOKS_STARTED"
-const FETCH_BOOKS_SUCCESS = "FETCH_BOOKS_SUCCESS"
-const FETCH_BOOKS_FAIL = "FETCH_BOOKS_FAIL"
+const FETCH_BOOK_STARTED = "FETCH_BOOKS_STARTED"
+const FETCH_BOOK_SUCCESS = "FETCH_BOOKS_SUCCESS"
+const FETCH_BOOK_FAIL = "FETCH_BOOKS_FAIL"
 
 export const booksReducer = (
   state = defaultState,
@@ -111,17 +111,17 @@ export const booksReducer = (
     case APPEND_BOOKS_FAIL: {
       return { ...state, loading: false, error: action.payload }
     }
-    case FETCH_BOOKS_STARTED: {
+    case FETCH_BOOK_STARTED: {
       return { ...state, loading: true }
     }
-    case FETCH_BOOKS_SUCCESS: {
+    case FETCH_BOOK_SUCCESS: {
       return {
         ...state,
         loading: false,
         currentBook: { ...action.payload },
       }
     }
-    case FETCH_BOOKS_FAIL: {
+    case FETCH_BOOK_FAIL: {
       return { ...state, loading: false, error: action.payload }
     }
     default:
@@ -157,13 +157,13 @@ export const appendFetchedBooksFailAction = (payload: object) => ({
 })
 ///Fetch 1 book
 export const fetchCurrentBookStartedAction = () => ({
-  type: "FETCH_BOOKS_STARTED",
+  type: "FETCH_BOOK_STARTED",
 })
 export const fetchCurrentBookSuccessAction = (payload: object) => ({
-  type: "FETCH_BOOKS_SUCCESS",
+  type: "FETCH_BOOK_SUCCESS",
   payload,
 })
 export const fetchCurrentBookFailAction = (payload: object) => ({
-  type: "FETCH_BOOKS_FAIL",
+  type: "FETCH_BOOK_FAIL",
   payload,
 })
